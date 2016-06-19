@@ -1,0 +1,13 @@
+version: '2.0'
+services:
+    node:
+        build: ./node
+        volumes:
+            - ./volumes/node/build/bundled:/app/build/bundled
+            - ./volumes/node/build/unbundled:/app/build/unbundled
+    nginx:
+        image: nginx:latest
+        volumes:
+            - ./volumes/node/build/bundled:/usr/share/nginx/html
+        ports:
+            - 80:80
