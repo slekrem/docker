@@ -2,4 +2,3 @@
 set -e
 
 polymer build
-ls
