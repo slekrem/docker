@@ -11,4 +11,5 @@ fi
 
 eval $(docker-machine env $DOCKER_MACHINE_NAME)
 
-docker-compose up --build mono
+docker-compose build
+docker-compose up
