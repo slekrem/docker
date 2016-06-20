@@ -2,6 +2,9 @@ version: '2.0'
 services:
   mono:
     build: ./mono/
+    depends_on:
+      - rabbitmq
+    entrypoint: /wait-for-it.sh rabbitmq:15672
 
   rabbitmq: # https://registry.hub.docker.com/_/rabbitmq/
     image: rabbitmq:3-management
