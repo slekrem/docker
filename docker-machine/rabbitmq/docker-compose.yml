@@ -1,5 +1,7 @@
 version: '2.0'
 services:
+  mono:
+    build: ./mono/
   rabbitmq:
     image: rabbitmq:latest
     hostname: test
